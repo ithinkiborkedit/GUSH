@@ -33,6 +33,6 @@ func main() {
 	server := &tcpserver.TCPServer{GUSHUseCase: gushUseCase}
 	log.Println("Starting GUSH server...")
 
-	server.Listen("4000")
+	server.Listen()
 
 }

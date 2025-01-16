@@ -14,7 +14,7 @@ func (b *BroadcastService) BroadcastToRoom(roomID RoomID, message string) error 
 	}
 
 	for _, p := range players {
-		fmt.Printf("Sending to %s: %s\n", p.Name, message)
+		fmt.Printf("[BROADCAST TO %s]: %s\n", p.Name, message)
 	}
 
 	return nil
