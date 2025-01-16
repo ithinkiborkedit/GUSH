@@ -11,11 +11,11 @@ import (
 	domain "github.com/ithinkiborkedit/GUSH.git/domain/game"
 )
 
-type TCPServer struct {
+type TCPServerv1 struct {
 	GUSHUseCase *game.GUSHUseCase
 }
 
-func (s *TCPServer) Listen(port string) {
+func (s *TCPServerv1) Listen(port string) {
 	listener, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		log.Fatalf("failed to listen on port %s", port)
@@ -35,7 +35,7 @@ func (s *TCPServer) Listen(port string) {
 	}
 }
 
-func (s *TCPServer) handleConnection(conn net.Conn) {
+func (s *TCPServerv1) handleConnection(conn net.Conn) {
 	defer conn.Close()
 	reader := bufio.NewReader(conn)
 
